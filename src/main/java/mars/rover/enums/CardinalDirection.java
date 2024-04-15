@@ -64,8 +64,8 @@ public enum CardinalDirection {
         }
     };
 
-    abstract void move(Position position);
-    abstract CardinalDirection turn(Direction direction);
+    abstract public void move(Position position);
+    abstract public CardinalDirection turn(Direction direction);
 
     public static CardinalDirection getByLiteral(char letter) {
         for (CardinalDirection direction : CardinalDirection.values()) {

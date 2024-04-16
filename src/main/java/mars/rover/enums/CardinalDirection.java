@@ -75,4 +75,8 @@ public enum CardinalDirection {
         }
         return null;
     }
+
+    public static boolean isLiteralIncorrect(char literal) {
+        return literal != 'N' && literal != 'E' && literal != 'W' && literal != 'S';
+    }
 }

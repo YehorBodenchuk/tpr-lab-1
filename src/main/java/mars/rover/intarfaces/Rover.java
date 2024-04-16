@@ -9,4 +9,6 @@ public interface Rover {
     void turn(Direction direction);
 
     String getPosition();
+
+    String start(String instructions);
 }

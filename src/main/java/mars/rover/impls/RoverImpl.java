@@ -35,4 +35,28 @@ public class RoverImpl implements Rover {
 
         return String.format("%d %d %s", position.getPositionX(), position.getPositionY(), direction.toString().charAt(0));
     }
+
+    @Override
+    public String start(String instructions) {
+        char[] characters = instructions.toCharArray();
+
+        for (char literal : characters) {
+            switch (literal) {
+                case 'L':
+                    turn(Direction.LEFT);
+                    break;
+                case 'R':
+                    turn(Direction.RIGHT);
+                    break;
+                case 'M':
+                    moveForward();
+                    break;
+                default:
+                    System.out.printf("This literal: {%s} is unsupported and will be ignored%n", literal);
+                    break;
+            }
+        }
+
+        return getPosition();
+    }
 }
